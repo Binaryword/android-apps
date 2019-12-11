@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ContactApplication</string>
+
+    <string name="res_myusername">akintunde</string>
+    <string name="res_mypassword">akintunde1995</string>
+
+    <string name="res_pref_file_name">com.example.contactapplication_pref_config_file</string>
+    <string name="res_pref_file_status">com.example.contactapplication_pref_config_status</string>
+
+
+    <string name="res_username">Username</string>
+    <string name="res_password">Password</string>
+    <string name="res_loginbuttion">Login</string>
+    <string name="res_signupbuttion">CreateAccount</string>
+    <string name="res_forgetpassword">Forget Password?</string>
+    <string name="res_appname">Conit</string>
+
+
+    <string name="res_regusername">User Name</string>
+    <string name="res_regpassword">Password</string>
+    <string name="res_reggmail">Gmail Acount</string>
+    <string name="res_registerbuttion">Submit</string>
+
+
+
+</resources>
