@@ -39,14 +39,19 @@ public class MainActivity extends AppCompatActivity {
         {
             case R.id.menu_search :
                 Toast.makeText(this , "Search clicked" , Toast.LENGTH_SHORT).show();
-                break;
+                return true ;
             case R.id.menu_folder :
                 Toast.makeText(this, "folder clicked", Toast.LENGTH_SHORT).show();
-                break;
+                return true;
             case R.id.menu_share :
                 Toast.makeText(this , "share clicked" , Toast.LENGTH_SHORT).show();
-                break;
+                return true;
+
+                default:
+                    return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+
+      //  return super.onOptionsItemSelected(item);
+
     }
 }
