@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,5 +18,13 @@ public class MainActivity extends AppCompatActivity {
 
         mToolbar = findViewById(R.id.id_toolbarapp) ;
         setSupportActionBar(mToolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater menuInflater = getMenuInflater() ;
+        menuInflater.inflate(R.menu.app_menu_file , menu);
+        return true ;
     }
 }
