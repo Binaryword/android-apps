@@ -9,7 +9,8 @@
         android:title="search"
         android:id="@+id/menu_search"
         android:icon="@drawable/ic_search__24dp"
-        app:showAsAction="always"/>
+        app:showAsAction="always"
+        />
 
     <item
         android:title="folder"
