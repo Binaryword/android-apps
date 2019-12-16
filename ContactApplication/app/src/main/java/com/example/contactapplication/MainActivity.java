@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtUserName , txtPassword ;
     private Button loginButton, registerButton ;
     public static ContactAppConfig mContactAppConfig ;
-    public static AppDatabase sAppDatabase ;
+    public static AppDatabase appdb ;
 
 
     @Override
@@ -29,11 +29,12 @@ public class MainActivity extends AppCompatActivity {
 
         initializeWidget();
         mContactAppConfig = new ContactAppConfig(getApplicationContext());
-        sAppDatabase = Room.databaseBuilder(getApplicationContext() , AppDatabase.class , "userdb").build() ;
+        appdb = Room.databaseBuilder(getApplicationContext(), AppDatabase.class , "userdb").allowMainThreadQueries().build() ;
 
         // check if user as already login.......
         if(mContactAppConfig.readPreference())
         {
+
             startActivity(new Intent(this , HomeActivity.class));
         }//end of if
 
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+           // appdb = Room.databaseBuilder(getApplicationContext(), AppDatabase.class , "userdb").allowMainThreadQueries().build() ;
             if(username.equals(getResources().getString(R.string.res_myusername)) && password.equals(getResources().getString(R.string.res_mypassword)))
             {
                 //update the login preference
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this , HomeActivity.class) ;
                 startActivity(intent);
                 finish();
+
             }
             else{
 

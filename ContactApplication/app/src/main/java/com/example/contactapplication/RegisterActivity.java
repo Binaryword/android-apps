@@ -39,16 +39,31 @@ public class RegisterActivity extends AppCompatActivity {
 
                 }else{
 
+                    User user = new User();
+                    user.setMail(txtGmail.getText().toString());
+                    user.setUsername(txtName.getText().toString());
+                    user.setPassword(txtPassword.getText().toString());
+
+                    // calling the database static object from main activity class to access crude operation from the userDao class.
+                    MainActivity.appdb.mUserDao().addAccount(user);
                     Toast.makeText(getApplicationContext() , "submit Successfull" , Toast.LENGTH_SHORT).show();
-                    txtGmail.setText("");
-                    txtName.setText("");
-                    txtPassword.setText("");
+                    clearTextFieldCache();
 
                 }// end of else...
 
             }
 
         });// end of listener
+
+
+    }// end of method
+
+    //reseting the text field.....
+    public void clearTextFieldCache(){
+
+        txtGmail.setText("");
+        txtName.setText("");
+        txtPassword.setText("");
 
     }
 
