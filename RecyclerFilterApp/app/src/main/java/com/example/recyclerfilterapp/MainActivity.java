@@ -51,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
         }; // end of menu item listener.....
 
 
+
         MenuItem menuItem = menu.getItem(R.id.id_menu_search);
-        menuItem.setOnActionExpandListener(onActionExpandListener); 
+        menuItem.setOnActionExpandListener(onActionExpandListener);
 
 
 
