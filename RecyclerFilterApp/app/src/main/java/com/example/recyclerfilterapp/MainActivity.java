@@ -5,6 +5,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,16 +15,44 @@ import android.view.MenuItem;
 
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
     Toolbar toolbar  ;
+    RecyclerView mRecyclerView ;
+    RecyclerView.LayoutManager layoutManager ;
+
+    ArrayList<Contact> contactList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        contactList.add(new Contact("akintunde", "07035342756")) ;
+        contactList.add(new Contact("bolanle", "07035342756"));
+                contactList.add(new Contact("olajide", "07035342756"));
+                        contactList.add(new Contact("oyindamola", "07035342756"));
+                                contactList.add( new Contact("akolawole", "07035342756"));
+                                        contactList.add(new Contact("minirudeen", "07035342756"));
+                                                contactList.add(new Contact("sholape", "07035342756"));
+                                                        contactList.add(new Contact("ahemdi", "07035342756"));
+                                                                contactList.add(new Contact("lanrewaju", "07035342756"));
+                                                                        contactList.add(new Contact("obolade", "07035342756"));
+                                                                                contactList.add(new Contact("kehinde", "07035342756"));
+
+
+
         toolbar = findViewById(R.id.id_tool_bar) ;
+        mRecyclerView = findViewById(R.id.id_recyclerview);
+        layoutManager = new LinearLayoutManager(getApplicationContext());
+
+        ContactAdapter contactAdapter = new ContactAdapter(contactList);
+
+        mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.setAdapter(contactAdapter);
+        mRecyclerView.setHasFixedSize(true);
         setSupportActionBar(toolbar);
 
      //   ActionBar actionBar = getSupportActionBar() ;
