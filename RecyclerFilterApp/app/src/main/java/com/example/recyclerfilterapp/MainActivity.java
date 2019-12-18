@@ -9,21 +9,22 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Toolbar mToolbar  ;
+    Toolbar toolbar  ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mToolbar = findViewById(R.id.id_tool_bar) ;
-        setSupportActionBar(mToolbar);
+        toolbar = findViewById(R.id.id_tool_bar) ;
+        setSupportActionBar(toolbar);
 
-        ActionBar actionBar = getSupportActionBar() ;
+     //   ActionBar actionBar = getSupportActionBar() ;
        // actionBar.setDisplayShowHomeEnabled(true);
 
 
@@ -35,27 +36,24 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater menuInflater = getMenuInflater() ;
         menuInflater.inflate(R.menu.menu_tool , menu);
 
-        MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener()
-        {
+        MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem menuItem) {
-                Toast.makeText(getApplicationContext() , "as expand" , Toast.LENGTH_SHORT).show();
-                return true ;
+
+                Toast.makeText(getApplicationContext() , "search field expanded" , Toast.LENGTH_SHORT ).show();
+                return true;
             }
 
             @Override
             public boolean onMenuItemActionCollapse(MenuItem menuItem) {
-                Toast.makeText(getApplicationContext() , "as collapse" , Toast.LENGTH_SHORT).show();
-                return true ;
+                Toast.makeText(getApplicationContext() , "search field collapsed" , Toast.LENGTH_SHORT ).show();
+                return true;
             }
-        }; // end of menu item listener.....
+        };
 
 
-
-        MenuItem menuItem = menu.getItem(R.id.id_menu_search);
-        menuItem.setOnActionExpandListener(onActionExpandListener);
-
-
+        MenuItem searchItem = menu.findItem(R.id.id_menu_search);
+        searchItem.setOnActionExpandListener(onActionExpandListener);
 
         return true;
     }
