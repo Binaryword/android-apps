@@ -3,16 +3,17 @@ package com.example.recyclerfilterapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.SearchView;
+
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
     Toolbar toolbar  ;
 
@@ -51,9 +52,11 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-
         MenuItem searchItem = menu.findItem(R.id.id_menu_search);
+        SearchView searchView = (SearchView) searchItem.getActionView() ;
+        searchView.setOnQueryTextListener(this);
         searchItem.setOnActionExpandListener(onActionExpandListener);
+
 
         return true;
     }
@@ -63,5 +66,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+
+        Toast.makeText(getApplicationContext() , "user typing text" , Toast.LENGTH_SHORT).show();
+        return true;
     }
 }
