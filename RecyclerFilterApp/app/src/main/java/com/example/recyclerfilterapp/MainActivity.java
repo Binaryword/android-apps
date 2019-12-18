@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +34,27 @@ public class MainActivity extends AppCompatActivity {
 
         MenuInflater menuInflater = getMenuInflater() ;
         menuInflater.inflate(R.menu.menu_tool , menu);
+
+        MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener()
+        {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem menuItem) {
+                Toast.makeText(getApplicationContext() , "as expand" , Toast.LENGTH_SHORT).show();
+                return true ;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem menuItem) {
+                Toast.makeText(getApplicationContext() , "as collapse" , Toast.LENGTH_SHORT).show();
+                return true ;
+            }
+        }; // end of menu item listener.....
+
+
+        MenuItem menuItem = menu.getItem(R.id.id_menu_search);
+        menuItem.setOnActionExpandListener(onActionExpandListener); 
+
+
 
         return true;
     }
