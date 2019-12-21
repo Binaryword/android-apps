@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyContactViewHolder> {
@@ -58,4 +60,14 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyContac
 
         }
     }
+
+    //helper method to update the data
+    public void updateData(List<Contact> list){
+
+        mContactList = new ArrayList<>() ;
+        mContactList.addAll(list);
+        notifyDataSetChanged();
+
+
+    }// end of method...
 }

@@ -16,12 +16,15 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
     Toolbar toolbar  ;
     RecyclerView mRecyclerView ;
     RecyclerView.LayoutManager layoutManager ;
+    SearchView searchView ;
+    ContactAdapter contactAdapter ;
 
     ArrayList<Contact> contactList = new ArrayList<>();
 
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         mRecyclerView = findViewById(R.id.id_recyclerview);
         layoutManager = new LinearLayoutManager(getApplicationContext());
 
-        ContactAdapter contactAdapter = new ContactAdapter(contactList);
+        contactAdapter = new ContactAdapter(contactList);
 
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(contactAdapter);
@@ -83,9 +86,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         };
 
         MenuItem searchItem = menu.findItem(R.id.id_menu_search);
-        SearchView searchView = (SearchView) searchItem.getActionView() ;
+        searchView = (SearchView) searchItem.getActionView() ;
         searchView.setOnQueryTextListener(this);
-        searchItem.setOnActionExpandListener(onActionExpandListener);
+       // searchItem.setOnActionExpandListener(onActionExpandListener);
 
 
         return true;
@@ -106,7 +109,22 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     public boolean onQueryTextChange(String s) {
 
+        String userInput = s.toLowerCase() ;
         Toast.makeText(getApplicationContext() , "user typing text" , Toast.LENGTH_SHORT).show();
-        return true;
+        List<Contact> newList = new ArrayList<>() ;
+
+        for(Contact contact : contactList)
+        {
+            if(contact.getContact_name().toLowerCase().contains(userInput.toLowerCase()) || contact.getContact_number().toLowerCase().contains(userInput.toLowerCase()))
+            {
+                newList.add(contact);
+
+            }// end of if statement..
+
+        }//end of for loop
+
+        contactAdapter.updateData(newList);
+
+          return true;
     }
 }
