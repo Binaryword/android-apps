@@ -1,10 +1,10 @@
 package com.example.viewpagerdemo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,9 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mViewPager = findViewById(R.id.id_viewPager);
-        adapter = new MessageStateAdapter(getSupportFragmentManager());
+        adapter = new MessageStateAdapter(getSupportFragmentManager(), 1);
         mViewPager.setAdapter(adapter);
 
     }

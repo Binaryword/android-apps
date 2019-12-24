@@ -7,11 +7,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+
 public class MessageStateAdapter extends FragmentStatePagerAdapter {
 
 
-    public MessageStateAdapter(@NonNull FragmentManager fm) {
-        super(fm);
+    public MessageStateAdapter(@NonNull FragmentManager fm, int behavior) {
+        super(fm, behavior);
     }
 
     @NonNull
