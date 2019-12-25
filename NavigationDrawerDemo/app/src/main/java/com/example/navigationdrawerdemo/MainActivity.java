@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //mToolbar = findViewById(R.id.id_toolbar);
-        //setSupportActionBar(mToolbar);
+       // mToolbar = findViewById(R.id.id_toolbar);
+       // setSupportActionBar(mToolbar);
 
         mDrawerLayout = findViewById(R.id.id_drawerLayout);
         mNavigationView = findViewById(R.id.id_navDrawer);
