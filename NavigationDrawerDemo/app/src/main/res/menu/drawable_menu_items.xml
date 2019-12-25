@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/id_menu_cammera"
+            android:title="Cammera"
+            android:icon="@drawable/ic_camera_alt_black_24dp"
+            />
+
+        <item
+            android:id="@+id/id_menu_driveFile"
+            android:title="New File"
+            android:icon="@drawable/ic_insert_drive_file_black_24dp"
+            />
+
+        <item
+            android:id="@+id/id_menu_security"
+            android:title="Security"
+            android:icon="@drawable/ic_security_black_24dp"
+            />
+
+        <item
+            android:id="@+id/id_menu_setting"
+            android:title="Setting"
+            android:icon="@drawable/ic_settings_black_24dp"
+            />
+
+
+
+
+
+    </group>
+
+</menu>
