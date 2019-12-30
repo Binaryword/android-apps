@@ -1,11 +1,13 @@
 package com.example.navigationdrawerdemo;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -23,16 +25,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // mToolbar = findViewById(R.id.id_toolbar);
-       // setSupportActionBar(mToolbar);
+        mToolbar = findViewById(R.id.id_tool_bar);
+        setSupportActionBar(mToolbar);
+
+        final ActionBar anctionBar = getSupportActionBar();
+        anctionBar.setDisplayHomeAsUpEnabled(true);
+        anctionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
         mDrawerLayout = findViewById(R.id.id_drawerLayout);
         mNavigationView = findViewById(R.id.id_navDrawer);
 
+
+
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
+                Log.d("show" , "listener method callde") ;
                 switch(menuItem.getItemId())
                 {
                     case R.id.id_menu_cammera :
@@ -60,12 +70,11 @@ public class MainActivity extends AppCompatActivity {
                         return true ;
 
 
-                        default:
-                            return false ;
-
                 } // end of switch statement
 
 
+                Toast.makeText(getApplicationContext() , "app started" , Toast.LENGTH_SHORT).show();
+                return  false ;
 
             }
         });//end of listeners.....
