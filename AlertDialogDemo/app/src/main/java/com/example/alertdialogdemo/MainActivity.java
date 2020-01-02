@@ -15,6 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void showDialogbuilder(View view) {
 
-
+            new MyAlertDialog().show(getSupportFragmentManager() , "Alert");
     }
 }
