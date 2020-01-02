@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DialogLogItems</string>
+
+    <string-array name="colors">
+
+        <item>Red color</item>
+        <item>Blue color</item>
+        <item>Green color</item>
+
+    </string-array>
+
+</resources>
