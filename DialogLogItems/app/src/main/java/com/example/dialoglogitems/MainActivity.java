@@ -16,6 +16,6 @@ public class MainActivity extends AppCompatActivity {
     public void showDialog(View view) {
 
         MyColorDialog myColorDialog = new MyColorDialog();
-        myColorDialog.show(getSupportFragmentManager() , "Dialog"); 
+        myColorDialog.show(getSupportFragmentManager() , "Dialog");
     }
 }
