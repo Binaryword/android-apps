@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         snackbar.setAction("UNDO", new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext() , "undo clicked" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext() , "undo clicked" , Toast.LENGTH_SHORT).show(); 
             }
         });
         snackbar.show(); ;
