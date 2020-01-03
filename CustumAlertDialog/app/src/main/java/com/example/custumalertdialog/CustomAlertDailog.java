@@ -39,6 +39,7 @@ public class CustomAlertDailog extends DialogFragment {
                 Toast.makeText(getActivity() , "ok clicked" , Toast.LENGTH_SHORT).show();
             }
         });
+
         return builder.create();
     }
 }
