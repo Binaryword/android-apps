@@ -9,6 +9,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +41,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
 
+        switch(item.getItemId())
+        {
+            case R.id.id_add :
+                show_message("item added");
+
+        }
+
         return super.onContextItemSelected(item);
     }
+
+
+    public void show_message(String message){
+
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.root_element_id) , message , Snackbar.LENGTH_LONG);
+        snackbar.show();
+    }
+
 }
