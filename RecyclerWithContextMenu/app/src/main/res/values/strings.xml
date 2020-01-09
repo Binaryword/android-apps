@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">RecyclerWithContextMenu</string>
+
+    <string-array name="string_image_name" >
+
+        <item name="baby">Baby</item>
+        <item name="box">Box</item>
+        <item name="cup">Cup</item>
+        <item name="grape">Grape</item>
+        <item name="logo">Logo</item>
+        <item name="phone">Phone</item>
+        <item name="pot">Pot</item>
+        <item name="quran">Quran</item>
+        <item name="tedy">Tedy</item>
+        <item name="umbrella">Umbrella</item>
+
+    </string-array>
+
+
+</resources>
