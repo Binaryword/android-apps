@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mListView = findViewById(R.id.id_listView);
+        mListView.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE_MODAL);
+        mListView.setMultiChoiceModeListener(mMultiChoiceModeListener);
         List<String> list = getColorList() ;
         Toast.makeText(this , list.size()+"" , Toast.LENGTH_LONG).show();
         mMyAdapter = new MyAdapter(list , this);
@@ -52,8 +54,9 @@ public class MainActivity extends AppCompatActivity {
         public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
 
             MenuInflater menuInflater = actionMode.getMenuInflater() ;
+            menuInflater.inflate(R.menu.action_mode_menu , menu);
 
-            return false;
+            return true;
         }
 
         @Override
