@@ -58,13 +58,17 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+
+
+
+
             return false;
         }
 
         @Override
         public void onDestroyActionMode(ActionMode actionMode) {
 
-            mActionMode = null ; 
+            mActionMode = null ;
         }
     } ;
 
