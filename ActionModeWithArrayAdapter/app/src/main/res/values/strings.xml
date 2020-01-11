@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ActionModeWithArrayAdapter</string>
+
+    <string-array name="colors">
+
+        <item>red</item>
+        <item>blue</item>
+        <item>green</item>
+        <item>indigo</item>
+        <item>yellow</item>
+        <item>black</item>
+        <item>purple</item>
+        <item>brown</item>
+        <item>gold</item>
+        <item>gray</item>
+        <item>milk</item>
+
+
+    </string-array>
+</resources>
