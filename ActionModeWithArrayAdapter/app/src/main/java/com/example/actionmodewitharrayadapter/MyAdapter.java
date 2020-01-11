@@ -39,4 +39,15 @@ public class MyAdapter extends ArrayAdapter<String> {
 
         return view ;
     }
+
+
+    public void deleteColor(List<String> deletList)
+    {
+        for(String l : deletList){
+            colors.remove(l);
+        }
+
+        notifyDataSetChanged();
+
+    }
 }

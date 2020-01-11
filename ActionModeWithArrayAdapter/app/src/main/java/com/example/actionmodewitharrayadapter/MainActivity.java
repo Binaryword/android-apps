@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     List<String> colors  ;
     MyAdapter mMyAdapter ;
     ListView mListView ;
+    List<String> selectionList  = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,12 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onItemCheckedStateChanged(ActionMode actionMode, int i, long l, boolean b) {
 
+            if(selectionList.contains(colors.get(i)))
+                selectionList.remove(colors.get(i));
+            else
+                selectionList.add(colors.get(i));
+
+            actionMode.setTitle(selectionList.size() + " item selected..");
         }
 
         @Override
@@ -66,12 +73,18 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+            switch(menuItem.getItemId()){
+                case R.id.id_delete_menu :
+                    mMyAdapter.deleteColor(selectionList);
+                    actionMode.finish();
+                    return true ;
+            }
             return false;
         }
 
         @Override
         public void onDestroyActionMode(ActionMode actionMode) {
-
+                selectionList.clear();
         }
     };
 }
