@@ -41,6 +41,7 @@ public class MyAdapter extends ArrayAdapter<String> {
         final CheckBox checkBox = view.findViewById(R.id.id_checkHolder);
         textView.setText(colors.get(position));
 
+        // setting the recycler position for checkbox via checkbox tag....
         checkBox.setTag(position);
 
         // if statement to check if the action mode as been activated from main activity....
@@ -57,7 +58,18 @@ public class MyAdapter extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
-                //int position = checkBox.getTag();
+                int position = (int)checkBox.getTag();
+
+                if(MainActivity.selectionList.contains(colors.get(position)))
+                {
+                    MainActivity.selectionList.remove(colors.get(position));
+                }else{
+
+                    MainActivity.selectionList.add(colors.get(position));
+
+                }// end of if else statement....
+
+                MainActivity.sActionMode.setTitle(MainActivity.selectionList.size()+ " Item Selected.." );
             }
         });
 
