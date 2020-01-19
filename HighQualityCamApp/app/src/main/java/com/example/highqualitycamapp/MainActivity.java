@@ -58,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayImage(View view) {
 
-
+        Intent intent =  new Intent(getApplicationContext() , DisplayImage.class);
+        intent.putExtra("image_path" , currentImageDir ) ;
+        startActivity(intent);
     }
 
     public File getImageFile() throws IOException {
