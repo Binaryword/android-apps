@@ -3,9 +3,14 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,11 +29,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void activateOperand(View view) {
 
+        if(screen.getText().toString() =="0"){
+            screen.setText("");
+
+        }
+
+        Log.d("MASSAGE" , screen.getText().toString()) ;
+
         switch(view.getId())
         {
             case R.id.id_button_one :
-               screen.setText( screen.getText().toString() + "1");
-                break ;
+            screen.setText( screen.getText().toString() + "1");
+            break ;
             case R.id.id_button_two :
                 screen.setText( screen.getText().toString() + "2");
                 break ;
@@ -54,14 +66,17 @@ public class MainActivity extends AppCompatActivity {
                 screen.setText( screen.getText().toString() + "9");
                 break ;
             case R.id.id_button_zero :
-                screen.setText( screen.getText().toString() + "0");
+                  screen.setText( screen.getText().toString() + "0");
                 break ;
             case R.id.id_button_two_zero :
-                screen.setText( screen.getText().toString() + "00");
+                  screen.setText( screen.getText().toString() + "00");
                 break ;
             case R.id.id_button_dot :
                 screen.setText( screen.getText().toString() + ".");
                 break ;
+
+            default:
+
 
         }
 
@@ -69,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void activateOperation(View view) {
 
-        
+
 
     }
 
@@ -77,6 +92,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void activateModification(View view) {
 
+
+        switch(view.getId())
+        {
+            case R.id.id_button_clrall :
+                screen.setText("0");
+                break ;
+            case R.id.id_button_clr :
+
+                break ;
+        }
 
     }
 
