@@ -67,7 +67,7 @@ public class Calculate {
           case "sqr" :
               return Math.sqrt(fn) ;
               default:
-                  return fn ; 
+                  return fn ;
       }
 
     }// end of method .....
