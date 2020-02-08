@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button button ;
     TextView screen ;
     TextView adScreen ;
+    private static String SHOW_MESSAGE = "message" ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,17 +25,18 @@ public class MainActivity extends AppCompatActivity {
 
 
         screen = findViewById(R.id.id_text_screen) ;
+        screen.setText("0");
 
     }
 
     public void activateOperand(View view) {
 
-        if(screen.getText().toString() =="0"){
+        if( screen.getText().toString().equals("0") || screen.getText().toString().equals("00")){
             screen.setText("");
-
+            Log.d(SHOW_MESSAGE , "only zero in the screen") ;
         }
 
-        Log.d("MASSAGE" , screen.getText().toString()) ;
+        Log.d(SHOW_MESSAGE , "loop") ;
 
         switch(view.getId())
         {
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 screen.setText( screen.getText().toString() + "9");
                 break ;
             case R.id.id_button_zero :
-                  screen.setText( screen.getText().toString() + "0");
+                   screen.setText( screen.getText().toString() + "0");
                 break ;
             case R.id.id_button_two_zero :
                   screen.setText( screen.getText().toString() + "00");
@@ -79,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+
+        if(screen.getText().toString().equals("."))
+            screen.setText("0.");
+        
+        Log.d( SHOW_MESSAGE , screen.getText().toString() ) ;
 
     }
 
