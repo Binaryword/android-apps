@@ -55,7 +55,7 @@ public class Calculate {
 
     public double compute(double fn , double sn , String opr){
 
-      switch (opr){
+      switch (opr.toLowerCase().trim()){
           case "+" :
               return fn + sn ;
           case "-" :

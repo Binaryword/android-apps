@@ -128,7 +128,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(SHOW_MESSAGE , "operator is : =>" + mCalculate.getOperator());
                 break;
             case R.id.id_button_sqr :
-                mCalculate.compute(fn , 0 , "sqr");
+                screen.setText(String.valueOf(mCalculate.compute(fn , 0 , "sqr")));
+                return ;
                 default:
                     mCalculate.setOperator("");
 

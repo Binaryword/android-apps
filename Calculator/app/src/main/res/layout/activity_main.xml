@@ -381,6 +381,8 @@
                 android:background="@color/equal_sign_button"
                 android:onClick="performCompuation"
                 android:text="@string/equal_operator"
+                android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
                 android:textSize="20dp" />
         </LinearLayout>
 

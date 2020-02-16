@@ -7,6 +7,6 @@
     <color name="digit_button_color">#E9E6E7</color>
     <color name="operator_button_color">#F0FFBCD2</color>
     <color name="text_color">#000000</color>
-    <color name="equal_sign_button">#8EFADA</color>
+    <color name="equal_sign_button">#04022A</color>
 
 </resources>
