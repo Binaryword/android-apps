@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#7C7878</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="background_color">#ffffff</color>
+    <color name="digit_button_color">#E9E6E7</color>
+    <color name="operator_button_color">#F0FFBCD2</color>
+    <color name="text_color">#000000</color>
+    <color name="equal_sign_button">#8EFADA</color>
+
 </resources>

@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-
+    android:background="@color/background_color"
     >
 
     <LinearLayout
@@ -19,27 +19,27 @@
 
         >
 
-        <TextView
+        <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="40dp"
         android:padding="5dp"
-        android:text="@string/clear_all"
+        android:src="@drawable/ic_settings_black_24dp"
         android:layout_gravity="center"
         android:textStyle="bold"
         />
 
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:textSize="15dp"
             android:padding="5dp"
-            android:text=":"
-            android:textAlignment="textEnd"
-            android:textSize="25dp"
+            android:text="MR.B V1"
+            android:textColor="@color/text_color"
+            android:layout_gravity="center"
             android:textStyle="bold"
-            tools:ignore="RtlCompat"
+            />
 
             />
 
@@ -48,12 +48,13 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:padding="15dp"
         android:paddingLeft="10dp"
         android:textSize="30dp"
         android:textStyle="bold"
         android:text=""
+        android:textColor="@color/text_color"
         android:textAlignment="textEnd"
         android:gravity="bottom"
         android:id="@+id/id_adScreen"
@@ -61,13 +62,14 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:id="@+id/id_text_screen"
         android:padding="20dp"
         android:paddingRight="15dp"
         android:textSize="50dp"
         android:textStyle="bold"
         android:text="0"
+        android:textColor="@color/text_color"
         android:textAlignment="textEnd"
         android:gravity="bottom"
         tools:ignore="RtlCompat"
@@ -98,10 +100,15 @@
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+
+                android:background="@color/operator_button_color"
+
                 android:onClick="activateModification"
-
                 android:text="@string/clear_all"
-
+                android:textColor="@color/text_color"
+                android:textColorHighlight="@color/text_color"
+                android:textColorHint="@color/text_color"
+                android:textColorLink="@color/text_color"
                 android:textSize="20dp" />
 
             <Button
@@ -109,9 +116,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/operator_button_color"
                 android:onClick="activateModification"
                 android:text="@string/back_clear"
-
+                android:textColor="@color/text_color"
                 android:textSize="20dp" />
 
             <Button
@@ -119,9 +127,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/operator_button_color"
+
                 android:onClick="activateOperation"
                 android:text="@string/quare_root_operator"
-
+                android:textColor="@color/text_color"
                 android:textSize="20dp" />
 
 
@@ -130,9 +140,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/operator_button_color"
+
                 android:onClick="activateOperation"
                 android:text="@string/division_operator"
-
+                android:textColor="@color/text_color"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -153,9 +165,10 @@
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
-                android:text="@string/seven"
 
+                android:text="@string/seven"
                 android:textSize="20dp" />
 
             <Button
@@ -163,9 +176,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
-                android:text="@string/eight"
 
+                android:text="@string/eight"
                 android:textSize="20dp" />
 
             <Button
@@ -173,9 +187,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
-                android:text="@string/nine"
 
+                android:text="@string/nine"
                 android:textSize="20dp" />
 
 
@@ -184,9 +199,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/operator_button_color"
+
                 android:onClick="activateOperation"
                 android:text="@string/multiplication_operator"
-
+                android:textColor="@color/text_color"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -207,6 +224,7 @@
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
                 android:text="@string/four"
                 android:textSize="20dp" />
@@ -216,9 +234,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
-                android:text="@string/five"
 
+                android:text="@string/five"
                 android:textSize="20dp" />
 
             <Button
@@ -226,9 +245,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
-                android:text="@string/six"
 
+                android:text="@string/six"
                 android:textSize="20dp" />
 
 
@@ -237,9 +257,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/operator_button_color"
+
                 android:onClick="activateOperation"
                 android:text="@string/subtraction_operator"
-
+                android:textColor="@color/text_color"
                 android:textSize="20dp" />
 
                 />
@@ -263,9 +285,10 @@
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
-                android:text="@string/one"
 
+                android:text="@string/one"
                 android:textSize="20dp" />
 
             <Button
@@ -273,9 +296,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
-                android:text="@string/tow"
 
+                android:text="@string/tow"
                 android:textSize="20dp" />
 
             <Button
@@ -283,9 +307,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
-                android:text="@string/three"
 
+                android:text="@string/three"
                 android:textSize="20dp" />
 
 
@@ -294,9 +319,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/operator_button_color"
+
                 android:onClick="activateOperation"
                 android:text="@string/addition_operator"
-
+                android:textColor="@color/text_color"
                 android:textSize="20dp" />
 
         </LinearLayout>
@@ -317,9 +344,10 @@
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
-                android:text="@string/zero"
 
+                android:text="@string/zero"
                 android:textSize="20dp" />
 
             <Button
@@ -327,9 +355,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
-                android:text="@string/two_zero"
 
+                android:text="@string/two_zero"
                 android:textSize="20dp" />
 
             <Button
@@ -337,9 +366,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/digit_button_color"
                 android:onClick="activateOperand"
-                android:text="@string/dot"
 
+                android:text="@string/dot"
                 android:textSize="20dp" />
 
 
@@ -348,6 +378,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/equal_sign_button"
                 android:onClick="performCompuation"
                 android:text="@string/equal_operator"
                 android:textSize="20dp" />
