@@ -53,9 +53,10 @@
         android:paddingLeft="10dp"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:text="20 * 4"
+        android:text=""
         android:textAlignment="textEnd"
         android:gravity="bottom"
+        android:id="@+id/id_adScreen"
         tools:ignore="RtlCompat" />
 
     <TextView
@@ -208,7 +209,6 @@
                 android:layout_weight="1"
                 android:onClick="activateOperand"
                 android:text="@string/four"
-
                 android:textSize="20dp" />
 
             <Button
@@ -348,9 +348,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="activateOperation"
+                android:onClick="performCompuation"
                 android:text="@string/equal_operator"
-
                 android:textSize="20dp" />
         </LinearLayout>
 

@@ -22,7 +22,7 @@
     <string name="subtraction_operator" >-</string>
     <string name="multiplication_operator" >x</string>
     <string name="division_operator" >/</string>
-    <string name="quare_root_operator" >/-</string>
+    <string name="quare_root_operator" >Sqr</string>
     <string name="back_clear" >C</string>
     <string name="clear_all" >CLR</string>
 

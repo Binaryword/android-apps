@@ -6,7 +6,7 @@ public class Calculate {
 
     private  double mFirstNum ;
     private double mSecondNum ;
-    private String mOprator;
+    private String mOperator;
 
     public Calculate(){
         this(0 , 0 , "");
@@ -23,7 +23,7 @@ public class Calculate {
     public Calculate(double fn , double sn , String opr){
         this.mFirstNum = fn ;
         this.mSecondNum = sn ;
-        this.mOprator = opr ;
+        this.mOperator = opr ;
     }
 
 
@@ -43,12 +43,12 @@ public class Calculate {
         mSecondNum = secondNum;
     }
 
-    public String getOprator() {
-        return mOprator;
+    public String getOperator() {
+        return mOperator;
     }
 
-    public void setOprator(String oprator) {
-        mOprator = oprator;
+    public void setOperator(String operator) {
+        mOperator = operator;
     }
 
 
@@ -60,7 +60,7 @@ public class Calculate {
               return fn + sn ;
           case "-" :
                   return fn - sn ;
-          case "X" :
+          case "*" :
               return fn * sn ;
           case  "/" :
               return fn / sn ;
