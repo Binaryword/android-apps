@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MessageSender</string>
+    <string name="promptText">Enter a Message</string>
+    <string name="buttonLabel">Send</string>
+    <string name="diplayMessage">Welcome Message</string>
+</resources>
