@@ -3,4 +3,6 @@
     <string name="promptText">Enter a Message</string>
     <string name="buttonLabel">Send</string>
     <string name="diplayMessage">Welcome Message</string>
+    <string name="button_open_final">show Final</string>
+    <string name="final_text_view">Final Activity</string>
 </resources>
