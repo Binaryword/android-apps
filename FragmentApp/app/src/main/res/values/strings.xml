@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FragmentApp</string>
+    <string name="north_string">North Fragment</string>
+    <string name="south_string">South Fragment</string>
+</resources>
