@@ -37,7 +37,7 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                MainActivity.sFragmentManager.beginTransaction().replace(R.id.main_container_id , new SecondFragment() , null).commit();
+                MainActivity.sFragmentManager.beginTransaction().replace(R.id.main_container_id , new SecondFragment() , null).addToBackStack(null).commit();
 
             }
         });
