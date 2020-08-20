@@ -33,7 +33,7 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.StateViewHol
         TextView textView = (TextView) LayoutInflater.from(parent.getContext()).inflate( R.layout.state_holder_layout, parent , false) ;
         Log.d("CHECKING ERRORS" , textView.toString());
         StateViewHolder stateViewHolder = new StateViewHolder(textView);
-        
+
         return stateViewHolder;
     }
 
