@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">LinearRecyclerView</string>
+
+    <string-array name="places"  >
+        <item>Offa</item>
+        <item>Ibadan</item>
+        <item>Oyo</item>
+        <item>Erin</item>
+        <item>Ekiti</item>
+        <item>Ado</item>
+        <item>Ikirun</item>
+        <item>Eko</item>
+        <item>Osun</item>
+        <item>Jos</item>
+        <item>Kano</item>
+        <item>Ijagbo</item>
+        <item>Ilesha</item>
+    </string-array>
+
+</resources>
