@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GridRecyclerDemoApp</string>
+
+    <string-array name="image_name">
+
+        <item>baby</item>
+        <item>box</item>
+        <item>cup</item>
+        <item>grape</item>
+        <item>logo</item>
+        <item>phone</item>
+        <item>pot</item>
+        <item>quran</item>
+        <item>tedy</item>
+        <item>umbrella</item>
+
+    </string-array>
+
+</resources>
