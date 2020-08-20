@@ -12,6 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.List;
 
 
 public class ReadContactFragment extends Fragment {
@@ -36,7 +39,11 @@ public class ReadContactFragment extends Fragment {
 
 
     public void readContact(){
-        SQLiteDatabase database = MainActivity.sContactDbHelper.getReadableDatabase();
+
+          /*  this section if for
+            sqlite database....*/
+
+       /* SQLiteDatabase database = MainActivity.sContactDbHelper.getReadableDatabase();
         Cursor cursor = MainActivity.sContactDbHelper.readContact(database);
 
         while (cursor.moveToNext()){
@@ -52,7 +59,32 @@ public class ReadContactFragment extends Fragment {
             builder.append("Email : " + mail).append("\n\n");
             String data = mTextView.getText().toString()  +   builder.toString() ;
             mTextView.setText(data);
-        }// end of while
+        }// end of while*/
+
+
+         /*  this section if for
+            room database....*/
+
+       List<Contact> contactList =  MainActivity.sContactDatabase.getContactDao().readContact() ;
+
+       for(Contact contact : contactList)
+       {
+           int id =  contact.getId() ;
+           String name = contact.getName();
+           String mail = contact.getEmail();
+
+           StringBuilder builder = new StringBuilder();
+           builder.append("\n");
+           builder.append("Id : " + String.valueOf(id)).append("\n");
+           builder.append("Name : " + name).append("\n");
+           builder.append("Email : " + mail).append("\n\n");
+           String data = mTextView.getText().toString()  +   builder.toString() ;
+           mTextView.setText(data);
+       }
+
+
+
+
 
     }
 

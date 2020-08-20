@@ -38,10 +38,16 @@ public class DeleteFragment extends Fragment {
             public void onClick(View view) {
 
                 int id = Integer.parseInt(editText.getText().toString()) ;
-                SQLiteDatabase sqLiteDatabase = MainActivity.sContactDbHelper.getWritableDatabase();
-                MainActivity.sContactDbHelper.deleteContact(id ,sqLiteDatabase);
+               /* SQLiteDatabase sqLiteDatabase = MainActivity.sContactDbHelper.getWritableDatabase();
+                MainActivity.sContactDbHelper.deleteContact(id ,sqLiteDatabase);*/
+               Contact contact  = new Contact();
+               contact.setId(id);
+               MainActivity.sContactDatabase.getContactDao().deleteContact(contact);
+
                 Toast.makeText(getActivity() , "Delete successFull" , Toast.LENGTH_SHORT).show();
                 editText.setText("");
+
+
             }
         });
 

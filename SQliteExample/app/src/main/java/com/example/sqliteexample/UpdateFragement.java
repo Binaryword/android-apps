@@ -42,9 +42,15 @@ public class UpdateFragement extends Fragment{
                 String name = nameText.getText().toString() ;
                 String email = emailText.getText().toString() ;
 
-                SQLiteDatabase sqLiteDatabase = MainActivity.sContactDbHelper.getWritableDatabase() ;
-                MainActivity.sContactDbHelper.updateContac(id , name , email , sqLiteDatabase);
-                Toast.makeText(getActivity() , "Update Successfully" , Toast.LENGTH_SHORT).show();
+              /*  SQLiteDatabase sqLiteDatabase = MainActivity.sContactDbHelper.getWritableDatabase() ;
+                MainActivity.sContactDbHelper.updateContac(id , name , email , sqLiteDatabase);*/
+
+              Contact contact = new Contact();
+              contact.setId(id);
+              contact.setName(name);
+              contact.setEmail(email);
+              MainActivity.sContactDatabase.getContactDao().updateContact(contact);
+              Toast.makeText(getActivity() , "Update Successfully" , Toast.LENGTH_SHORT).show();
 
             }
         });

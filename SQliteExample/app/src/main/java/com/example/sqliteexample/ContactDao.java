@@ -18,7 +18,7 @@ public interface ContactDao {
     public List<Contact> readContact();
 
     @Delete
-    public void deleteContact();
+    public void deleteContact(Contact contact);
 
     @Update
     public void updateContact(Contact contact);

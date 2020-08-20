@@ -2,6 +2,8 @@ package com.example.sqliteexample;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 import android.os.Bundle;
 
@@ -9,6 +11,8 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnMe
 
     public static FragmentManager sFragmentManager ;
     public static ContactDbHelper  sContactDbHelper ;
+    public static ContactDatabase sContactDatabase ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnMe
             sContactDbHelper = new ContactDbHelper(getApplicationContext());
             sFragmentManager = getSupportFragmentManager();
             sFragmentManager.beginTransaction().add(R.id.mainFrame_container_id , new HomeFragment() , null).commit();
+            sContactDatabase = Room.databaseBuilder(this , ContactDatabase.class , "contact_db").allowMainThreadQueries().build();
 
 
         }// end of if

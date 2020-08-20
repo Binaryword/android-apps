@@ -47,8 +47,13 @@ public class AddContactFragment extends Fragment {
                 String name = nameText.getText().toString() ;
                 String email = emailText.getText().toString() ;
 
-                SQLiteDatabase sqLiteDatabase = MainActivity.sContactDbHelper.getWritableDatabase() ;
-                MainActivity.sContactDbHelper.addContact(id , name , email , sqLiteDatabase);
+     //           SQLiteDatabase sqLiteDatabase = MainActivity.sContactDbHelper.getWritableDatabase() ;
+       //         MainActivity.sContactDbHelper.addContact(id , name , email , sqLiteDatabase);
+                Contact contact = new Contact() ;
+                contact.setId(id);
+                contact.setName(name);
+                contact.setEmail(email);
+                MainActivity.sContactDatabase.getContactDao().addContact(contact);
                 Toast.makeText(getActivity(),"Contact added" , Toast.LENGTH_SHORT).show();
 
             }
