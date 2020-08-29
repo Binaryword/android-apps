@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.Inflater;
 
@@ -57,4 +58,14 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.StateViewHol
             mTextView = itemView ;
         }
     }
+
+
+    public void updateView(List<String> newList)
+    {
+
+        itemList = new ArrayList<>();
+        itemList.addAll(newList);
+        notifyDataSetChanged();
+
+    }// end of method
 }
